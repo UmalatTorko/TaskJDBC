@@ -19,7 +19,6 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-
         String SQL = "CREATE TABLE IF NOT EXISTS users " +
                 "(`id` INT NOT NULL AUTO_INCREMENT," +
                 " `name` VARCHAR(45) NULL," +
@@ -34,7 +33,6 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void dropUsersTable() {
-
         try(Statement statement = util.getConnection().createStatement()) {
             statement.executeUpdate("DROP TABLE IF EXISTS users");
         } catch (SQLException ignore) {
@@ -64,7 +62,6 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public List<User> getAllUsers() {
-
         List<User> userList = new ArrayList<>();
         try(Statement statement = util.getConnection().createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
@@ -80,16 +77,13 @@ public class UserDaoJDBCImpl implements UserDao {
             }
         } catch (SQLException ignore) {
         }
-
         return userList;
     }
 
     public void cleanUsersTable() {
-
         try(Statement statement = util.getConnection().createStatement()) {
             statement.executeUpdate("TRUNCATE TABLE users");
         } catch (SQLException ignore) {
         }
-
     }
 }

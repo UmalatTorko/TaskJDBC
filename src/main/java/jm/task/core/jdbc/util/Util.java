@@ -10,7 +10,7 @@ public class Util {
     private static final String USERNAME = "torko";
     private static final String PASSWORD = "torko";
 
-    Connection connection;
+    private Connection connection;
 
     public Util() {
         try {
