@@ -18,13 +18,13 @@ public class Util {
     private static final String USERNAME = "torko";
     private static final String PASSWORD = "torko";
 
-    private Connection connection;
+    private static Connection connection;
     private static SessionFactory sessionFactory;
 
     public Util() {
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException throwables) {
