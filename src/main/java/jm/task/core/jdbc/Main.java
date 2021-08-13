@@ -8,7 +8,7 @@ public class Main {
 
         UserServiceImpl userService = new UserServiceImpl();
         userService.createUsersTable();
-        userService.saveUser("Alex", "Green", (byte) 27);
+        userService.saveUser("Alex", "Green",(byte) 27);
         userService.saveUser("Ron", "Black", (byte) 25);
         userService.saveUser("Mary", "Long", (byte) 17);
         userService.saveUser("Emma", "Grey", (byte) 32);
@@ -16,7 +16,6 @@ public class Main {
         for (User user : userService.getAllUsers()) {
             System.out.println(user);
         }
-
         userService.cleanUsersTable();
         userService.dropUsersTable();
     }
