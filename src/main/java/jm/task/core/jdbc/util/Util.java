@@ -10,17 +10,17 @@ public class Util {
     private static final String USERNAME = "torko";
     private static final String PASSWORD = "torko";
 
-    private Connection connection;
+    private static Connection connection;
 
     public Util() {
+    }
+
+    public static Connection getConnection() {
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public Connection getConnection() {
         return connection;
     }
 }
